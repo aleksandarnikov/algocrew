@@ -24,13 +24,13 @@ public class Main7181Alex {
                 int n = sc.nextInt();
                 int z = 1;
                 if (map.containsKey(n)) {
-                    z = map.get(n);
+                    z = map.get(n) + 1;
                 }
                 map.put(n, z);
             }
             for (Iterator iterator = map.entrySet().iterator(); iterator.hasNext();) {
                 Map.Entry<Integer, Integer> entry = (Map.Entry<Integer, Integer>) iterator.next();
-                if (entry.getValue() % K != 0 || entry.getValue() / K == 1) {
+                if (entry.getValue() % K != 0) {
                     System.out.println(entry.getKey());
                 }
             }
