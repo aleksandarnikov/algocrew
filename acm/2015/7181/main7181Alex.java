@@ -14,6 +14,9 @@ public class Main7181Alex {
                 break;
             }
             int N = sc.nextInt();
+            if (N == 0) {
+                break;
+            }
             int K = sc.nextInt();
 
             Map<Integer, Integer> map = new HashMap<Integer, Integer>();
