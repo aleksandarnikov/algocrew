@@ -40,19 +40,60 @@ class Main7176 {
             int B = Integer.parseInt(idata.nextToken());
             int x = Math.abs(A - B);
             int z = 1;
+            long mingcd = Long.MAX_VALUE;
+            long minc = Long.MAX_VALUE;
             if (x != 0) {
-                for (int i = 2; i*i <= x; i++) {
-                    if (x % i == 0) {
-                        x = i;
+                if (x > Math.min(A, B)) {
+                    for (int i = 2; i*i <= x; i++) {
+                        if (x % i == 0) {
+                            long xx = i;
+                            long zz = xx - A % xx;
+                            long num1 = A + zz;
+                            long num2 = B + zz;
+                            long lcm = lcm(num1, num2);
+                            if (lcm < mingcd) {
+                                mingcd = lcm;
+                                minc = zz;
+                            } else if (lcm == mingcd) {
+                                if (zz < minc) {
+                                    minc = zz;
+                                }
+                            }
+                            xx = x / i;
+                            zz = xx - A % xx;
+                            num1 = A + zz;
+                            num2 = B + zz;
+                            lcm = lcm(num1, num2);
+                            if (lcm < mingcd) {
+                                mingcd = lcm;
+                                minc = zz;
+                            } else if (lcm == mingcd) {
+                                if (zz < minc) {
+                                    minc = zz;
+                                }
+                            }
+                        }
                     }
                 }
                 z = x - A % x;
             }
             long num1 = A + z;
             long num2 = B + z;
-            long gcd = gcd(num1, num2);
-            System.out.println(z);
+            long lcm = lcm(num1, num2);
+            if (lcm < mingcd) {
+                mingcd = lcm;
+                minc = z;
+            } else if (lcm == mingcd) {
+                if (z < minc) {
+                    minc = z;
+                }
+            }
+            System.out.println(minc);
         }
+    }
+
+    private static long lcm(long num1, long num2) {
+        return num1 * num2 / gcd(num1, num2);
     }
 
     private static long gcd(long num1, long num2) {
