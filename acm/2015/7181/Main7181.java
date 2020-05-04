@@ -64,6 +64,7 @@ class Main7181 {
                 Map.Entry<Integer, Integer> entry = (Map.Entry<Integer, Integer>) iterator.next();
                 if (entry.getValue() % K != 0) {
                     System.out.println(entry.getKey());
+                    break;
                 }
             }
         }
