@@ -2,45 +2,40 @@
 import java.io.*;
 import java.util.*;
 
-class Main
-{
-    static String ReadLn (int maxLg)  // utility function to read from stdin
+class Main7176 {
+
+    static String ReadLn(int maxLg) // utility function to read from stdin
     {
-        byte lin[] = new byte [maxLg];
+        byte lin[] = new byte[maxLg];
         int lg = 0, car = -1;
 
-        try
-        {
-            while (lg < maxLg)
-            {
+        try {
+            while (lg < maxLg) {
                 car = System.in.read();
-                if ((car < 0) || (car == '\n')) break;
-                lin [lg++] += car;
+                if ((car < 0) || (car == '\n'))
+                    break;
+                lin[lg++] += car;
             }
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             return (null);
         }
 
-        if ((car < 0) && (lg == 0)) return (null);  // eof
-        return (new String (lin, 0, lg));
+        if ((car < 0) && (lg == 0))
+            return (null); // eof
+        return (new String(lin, 0, lg));
     }
 
-    public static void main (String args[])  // entry point from OS
+    public static void main(String args[]) // entry point from OS
     {
-        Main myWork = new Main();  // create a dinamic instance
-        myWork.Begin();            // the true entry point
+        Begin(); // the true entry point
     }
 
-    void Begin()
-    {
+    static void Begin() {
         String input;
         StringTokenizer idata;
 
-        while ((input = Main.ReadLn (255)) != null)
-        {
-            idata = new StringTokenizer (input);
+        while ((input = ReadLn(255)) != null) {
+            idata = new StringTokenizer(input);
             int A = Integer.parseInt(idata.nextToken());
             int B = Integer.parseInt(idata.nextToken());
             int x = Math.abs(A - B);
@@ -54,6 +49,7 @@ class Main
             System.out.println(gcd);
         }
     }
+
     private static long gcd(long num1, long num2) {
         long a = Math.max(num1, num2);
         long b = Math.min(num1, num2);

@@ -5,13 +5,12 @@ import java.util.Map;
 import java.io.*;
 import java.util.*;
 
-class Main7181Alex {
+class Main7181 {
 
     static String ReadLn(int maxLg) // utility function to read from stdin
     {
         byte lin[] = new byte[maxLg];
         int lg = 0, car = -1;
-        String line = "";
 
         try {
             while (lg < maxLg) {
@@ -31,22 +30,21 @@ class Main7181Alex {
 
     public static void main(String args[]) // entry point from OS
     {
-        Main myWork = new Main(); // create a dinamic instance
-        myWork.Begin(); // the true entry point
+        Begin(); // the true entry point
     }
 
-    void Begin() {
+    static void Begin() {
         String input;
         StringTokenizer idata;
 
-        while ((input = Main.ReadLn(255)) != null) {
+        while ((input = ReadLn(255)) != null) {
             idata = new StringTokenizer(input);
             int N = Integer.parseInt(idata.nextToken());
             int K = Integer.parseInt(idata.nextToken());
             boolean good = true;
             Map<Integer, Integer> map = new HashMap<Integer, Integer>();
             for (int i = 0; i < N; i++) {
-                input = Main.ReadLn(255);
+                input = ReadLn(255);
                 if (input == null) {
                     good = false;
                     break;
