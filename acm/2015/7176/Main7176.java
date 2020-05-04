@@ -41,12 +41,12 @@ class Main7176 {
             int x = Math.abs(A - B);
             int z = 1;
             if (x != 0) {
-                z = A % x;
+                z = x - A % x;
             }
             long num1 = A + z;
             long num2 = B + z;
             long gcd = gcd(num1, num2);
-            System.out.println(gcd);
+            System.out.println(z);
         }
     }
 
