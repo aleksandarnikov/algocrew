@@ -1,8 +1,10 @@
+package y2015.p7176_LCM;
+
 
 import java.io.*;
 import java.util.*;
 
-class Main7176 {
+class Main7176Alex {
 
     static String ReadLn(int maxLg) // utility function to read from stdin
     {

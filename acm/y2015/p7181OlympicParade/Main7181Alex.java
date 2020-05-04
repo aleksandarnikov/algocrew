@@ -1,11 +1,11 @@
-
+package y2015.p7181OlympicParade;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.io.*;
 import java.util.*;
 
-class Main7181 {
+class Main7181Alex {
 
     static String ReadLn(int maxLg) // utility function to read from stdin
     {
