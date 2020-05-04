@@ -41,6 +41,11 @@ class Main7176 {
             int x = Math.abs(A - B);
             int z = 1;
             if (x != 0) {
+                for (int i = 2; i*i <= x; i++) {
+                    if (x % i == 0) {
+                        x = i;
+                    }
+                }
                 z = x - A % x;
             }
             long num1 = A + z;
