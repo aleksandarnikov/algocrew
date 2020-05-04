@@ -30,7 +30,7 @@ public class Main7181Alex {
             }
             for (Iterator iterator = map.entrySet().iterator(); iterator.hasNext();) {
                 Map.Entry<Integer, Integer> entry = (Map.Entry<Integer, Integer>) iterator.next();
-                if (entry.getValue() % K != 0) {
+                if (entry.getValue() % K != 0 || entry.getValue() / K == 1) {
                     System.out.println(entry.getKey());
                 }
             }
