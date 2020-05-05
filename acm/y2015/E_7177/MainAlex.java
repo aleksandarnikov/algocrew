@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.io.*;
 import java.util.*;
 
-class Main {
+class MainAlex {
 
     static String ReadLn(int maxLg) // utility function to read from stdin
     {
