@@ -1,1 +1,5 @@
 /out/
+/.idea/
+/problems/
+/tools/temp_files/*
+__pycache__
