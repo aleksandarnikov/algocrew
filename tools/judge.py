@@ -43,8 +43,7 @@ def compare_results(input_output_path):
     print('Expected output: ')
     print(''.join(expected_output))
     print('Difference: ')
-    print('\n'.join(
-        difflib.unified_diff(program_output, expected_output)))
+    print('\n'.join(difflib.unified_diff(program_output, expected_output)))
 
 
 def judge(file_name, year, problem_letter):
@@ -62,6 +61,7 @@ def judge(file_name, year, problem_letter):
         return
     file_names = os.listdir()
     try:
+        # find package that contains the inputted letter
         package_name = next(file_name for file_name in file_names if problem_letter in file_name)
     except StopIteration:
         print('Could not find package in {} with letter {} in it.'.format(os.getcwd(), problem_letter))
@@ -80,7 +80,7 @@ def judge(file_name, year, problem_letter):
     os.chdir(script_path + '\\temp_files')
     run_java_with_input(class_file_name, input_output_path)
     compare_results(input_output_path)
-    shutil.rmtree('.\\', ignore_errors=True)
+    shutil.rmtree('.\\', ignore_errors=True)  # delete everything from temp_files directory
 
 
 def main():
