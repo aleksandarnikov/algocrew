@@ -130,8 +130,8 @@ int main(){
 	 		cmp.open("E/0" +to_string(j)+".out");
 	 	int tc;
 	 	cmp>>tc;
-	 	cout<<tc<<endl;
-	 	if(arez!=tc)cout<<"WROOONG "<<j<<endl;
-	 	else 		cout<<"OOOKKKK "<<j<<endl;
+	 	cout<<tc<<"    ";
+	 	if(arez!=tc)cout<<"WRONG "<<j<<endl;
+	 	else 		cout<<"OKKKK "<<j<<endl;
 	 }
 }
