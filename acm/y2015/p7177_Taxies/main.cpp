@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
-// #define cin fin
-// ifstream fin;
+#define cin fin
+ifstream fin;
 vector<vector<pair<int,int> > > p;
 vector<int> dp;
 vector<vector<int> > dist;
@@ -112,26 +112,26 @@ void solve(){
 }
 int main(){
 	///for working with cin
-	solve();
+//	solve();
 
 	///for working with fin, if you uncomment the following lines, make sure to also uncomment the lines 3 and 4, and comment the previous line
 
-	// for(int j = 1 ; j < 36 ; j ++){
-	// 	if(j<10)	///set the destination path accordingly
-	// 		fin.open("../../../../ACM2015problems/input-output/E/00"+to_string(j)+".in");
-	// 	else
-	// 		fin.open("../../../../ACM2015problems/input-output/E/0" +to_string(j)+".in");
-	// 	solve();
-	// 	fin.close();
-	// 	ifstream cmp;
-	// 	if(j<10)
-	// 		cmp.open("../../../../ACM2015problems/input-output/E/00"+to_string(j)+".out");
-	// 	else
-	// 		cmp.open("../../../../ACM2015problems/input-output/E/0" +to_string(j)+".out");
-	// 	int tc;
-	// 	cmp>>tc;
-	// 	cout<<tc<<endl;
-	// 	if(arez!=tc)cout<<"WROOONG "<<j<<endl;
-	// 	else 		cout<<"OOOKKKK "<<j<<endl;
-	// }
+	 for(int j = 1 ; j < 36 ; j ++){
+	 	if(j<10)	///set the destination path accordingly
+	 		fin.open("E/00"+to_string(j)+".in");
+	 	else
+	 		fin.open("E/0" +to_string(j)+".in");
+	 	solve();
+	 	fin.close();
+	 	ifstream cmp;
+	 	if(j<10)
+	 		cmp.open("E/00"+to_string(j)+".out");
+	 	else
+	 		cmp.open("E/0" +to_string(j)+".out");
+	 	int tc;
+	 	cmp>>tc;
+	 	cout<<tc<<endl;
+	 	if(arez!=tc)cout<<"WROOONG "<<j<<endl;
+	 	else 		cout<<"OOOKKKK "<<j<<endl;
+	 }
 }

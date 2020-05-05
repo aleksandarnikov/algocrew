@@ -80,7 +80,7 @@ def judge(file_name, year, problem_letter):
     os.chdir(script_path + '\\temp_files')
     run_java_with_input(class_file_name, input_output_path)
     compare_results(input_output_path)
-    shutil.rmtree('.\\', ignore_errors=True)  # delete everything from temp_files directory
+    #shutil.rmtree('.\\', ignore_errors=True)  # delete everything from temp_files directory
 
 
 def main():
