@@ -68,13 +68,14 @@ def judge(file_name, year, problem_letter):
         return
     java_source_path = '{}\\..\\acm\\y{}\\{}'.format(script_path, year, package_name)
     input_output_path = '{}\\..\\problems\\acm\\{}\\{}'.format(script_path, year, problem_letter)
-    os.chdir(java_source_path)
-    class_file_name = compile_java(script_path)
     try:
         os.chdir(input_output_path)
     except FileNotFoundError:
-        print('You do not have the input-output data for 2015, download it from http://acm.ro/{}'.format(year))
+        print('{} is missing, download it from http://acm.ro/{}'.format(os.path.abspath(input_output_path), year))
         return
+    os.chdir(java_source_path)
+    class_file_name = compile_java(script_path)
+    os.chdir(input_output_path)
     generate_merged_files()
     os.chdir(script_path + '\\temp_files')
     run_java_with_input(class_file_name, input_output_path)
